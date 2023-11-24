@@ -1,4 +1,6 @@
-import  { Test } from './test'
+import { Test } from "./test";
 
-const string = "12"
-Test(string)
+const string = "12";
+Test(string);
+
+document.body.innerHTML = `<h1> Hello world </h1>`;
