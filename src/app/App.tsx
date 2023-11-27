@@ -6,12 +6,12 @@ import { AppRouter } from "./providers/router";
 import "./styles/index.scss";
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
+
   return (
     <div className={classNames("app", {}, [theme])}>
       <Navbar />
-      {/* <AppRouter /> */}
-      <button onClick={toggleTheme}> Сменить тему</button>
+      <AppRouter />
     </div>
   );
 };
