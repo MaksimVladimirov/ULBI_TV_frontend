@@ -13,6 +13,10 @@
   --font-l: var(--font-size-l)
     var(var(--font-line-l) var(var(--font-family-main)));
 
-  // Размеры
+  // Размеры navbar
   --navbar-height: 50px;
+
+  // Размеры sidebar
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px
 }
