@@ -2,5 +2,11 @@
   "Тестовый пример": "Test example",
   "Перевод": "Перевод",
   "Главная страница": "Main page",
-  "Язык": "English"
+  "Язык": "English",
+  "Страница не найдена": "Page not found",
+  "О сайте" : "About",
+  "Главная" : "Main",
+  "Возникла непредвиденная ошибка": "An unexpected error occurred",
+  "Обновить страницу": "Reload page"
+
 }
