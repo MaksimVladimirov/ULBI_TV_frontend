@@ -1,5 +1,5 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
@@ -8,23 +8,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     use: ["@svgr/webpack"],
   };
 
-  const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-    use: [
-      {
-        loader: "file-loader",
-      },
-    ],
-  };
-
-  // Если не используем тайпскрипт - нужен babel-loader
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: "ts-loader",
-    exclude: /node_modules/,
-  };
-
-  const scssLoader = {
+  const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
@@ -42,5 +26,22 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       "sass-loader",
     ],
   };
-  return [typescriptLoader, scssLoader, svgLoader, fileLoader];
+
+  // Если не используем тайпскрипт - нужен babel-loader
+  const typescriptLoader = {
+    test: /\.tsx?$/,
+    use: "ts-loader",
+    exclude: /node_modules/,
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
+  return [fileLoader, svgLoader, typescriptLoader, cssLoader];
 }

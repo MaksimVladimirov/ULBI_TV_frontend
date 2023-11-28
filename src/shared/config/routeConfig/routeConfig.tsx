@@ -1,7 +1,6 @@
-import { AboutPage } from "Pages/AboutPage";
-import { MainPage } from "Pages/MainPage";
-import { fchmod } from "fs";
 import { RouteProps } from "react-router-dom";
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
 
 export enum AppRoutes {
   MAIN = "main",
